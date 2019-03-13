@@ -1,0 +1,314 @@
+[22-Feb-2019 12:12:52 Europe/Moscow] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS expression
+FROM
+{key_value} key_value
+WHERE (name = :db_condition_placeholder_0) AND (collection = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php on line 71 #0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'SELECT 1 AS exp...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('SELECT 1 AS exp...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Select.php(510): Drupal\Core\Database\Driver\mysql\Connection->query('SELECT 1 AS exp...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(365): Drupal\Core\Database\Query\Select->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(116): Drupal\Core\Database\Query\Merge->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php(71): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1550826720)
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(158): Drupal\Core\State\State->set('system.cron_las...', 1550826720)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(134): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(88): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.terminat...', Object(Symfony\Component\HttpKernel\Event\PostResponseEvent))
+#13 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(643): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u982426717/domains/tehoservis.ru/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[22-Feb-2019 12:12:52 Europe/Moscow] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php:59
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php(59): PDOStatement->execute(Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(625): Drupal\Core\Database\Statement->execute(Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#6 [internal function]: _drupal_shutdown_function()
+#7 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM {semaphore} 
+WHERE value = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 2160055545c6fbcec9a5c26.21920894
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php:686
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'DELETE FROM {se...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#5 [internal function]: _drupal_shutdown_function()
+#6 {main}
+[22-Feb-2019 12:46:13 Europe/Moscow] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS expression
+FROM
+{key_value} key_value
+WHERE (name = :db_condition_placeholder_0) AND (collection = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php on line 71 #0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'SELECT 1 AS exp...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('SELECT 1 AS exp...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Select.php(510): Drupal\Core\Database\Driver\mysql\Connection->query('SELECT 1 AS exp...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(365): Drupal\Core\Database\Query\Select->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(116): Drupal\Core\Database\Query\Merge->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php(71): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1550828742)
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(158): Drupal\Core\State\State->set('system.cron_las...', 1550828742)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(134): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(88): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.terminat...', Object(Symfony\Component\HttpKernel\Event\PostResponseEvent))
+#13 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(643): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u982426717/domains/tehoservis.ru/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[22-Feb-2019 12:46:13 Europe/Moscow] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php:59
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php(59): PDOStatement->execute(Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(625): Drupal\Core\Database\Statement->execute(Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#6 [internal function]: _drupal_shutdown_function()
+#7 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM {semaphore} 
+WHERE value = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 11166120815c6fc4c6bf9487.35490017
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php:686
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'DELETE FROM {se...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#5 [internal function]: _drupal_shutdown_function()
+#6 {main}
+[22-Feb-2019 13:46:27 Europe/Moscow] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS expression
+FROM
+{key_value} key_value
+WHERE (name = :db_condition_placeholder_0) AND (collection = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php on line 71 #0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'SELECT 1 AS exp...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('SELECT 1 AS exp...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Select.php(510): Drupal\Core\Database\Driver\mysql\Connection->query('SELECT 1 AS exp...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(365): Drupal\Core\Database\Query\Select->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(116): Drupal\Core\Database\Query\Merge->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php(71): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1550832355)
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(158): Drupal\Core\State\State->set('system.cron_las...', 1550832355)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(134): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(88): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.terminat...', Object(Symfony\Component\HttpKernel\Event\PostResponseEvent))
+#13 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(643): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u982426717/domains/tehoservis.ru/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[22-Feb-2019 13:46:27 Europe/Moscow] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php:59
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php(59): PDOStatement->execute(Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(625): Drupal\Core\Database\Statement->execute(Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#6 [internal function]: _drupal_shutdown_function()
+#7 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM {semaphore} 
+WHERE value = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 10393340635c6fd2e4d3d570.72777001
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php:686
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'DELETE FROM {se...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#5 [internal function]: _drupal_shutdown_function()
+#6 {main}
+[22-Feb-2019 15:52:23 Europe/Moscow] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS expression
+FROM
+{key_value} key_value
+WHERE (name = :db_condition_placeholder_0) AND (collection = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php on line 71 #0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'SELECT 1 AS exp...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('SELECT 1 AS exp...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Select.php(510): Drupal\Core\Database\Driver\mysql\Connection->query('SELECT 1 AS exp...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(365): Drupal\Core\Database\Query\Select->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(116): Drupal\Core\Database\Query\Merge->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php(71): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1550839901)
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(158): Drupal\Core\State\State->set('system.cron_las...', 1550839901)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(134): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(88): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.terminat...', Object(Symfony\Component\HttpKernel\Event\PostResponseEvent))
+#13 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(643): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u982426717/domains/tehoservis.ru/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[22-Feb-2019 15:52:23 Europe/Moscow] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php:59
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php(59): PDOStatement->execute(Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(625): Drupal\Core\Database\Statement->execute(Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#6 [internal function]: _drupal_shutdown_function()
+#7 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM {semaphore} 
+WHERE value = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 421377955c6ff0694bb773.25269330
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php:686
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'DELETE FROM {se...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#5 [internal function]: _drupal_shutdown_function()
+#6 {main}
+[23-Feb-2019 18:52:29 Europe/Moscow] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS expression
+FROM
+{key_value} key_value
+WHERE (name = :db_condition_placeholder_0) AND (collection = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php on line 71 #0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'SELECT 1 AS exp...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('SELECT 1 AS exp...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Select.php(510): Drupal\Core\Database\Driver\mysql\Connection->query('SELECT 1 AS exp...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(365): Drupal\Core\Database\Query\Select->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(116): Drupal\Core\Database\Query\Merge->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/State/State.php(71): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1550937110)
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(158): Drupal\Core\State\State->set('system.cron_las...', 1550937110)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Cron.php(134): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\PostResponseEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(88): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.terminat...', Object(Symfony\Component\HttpKernel\Event\PostResponseEvent))
+#13 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(643): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u982426717/domains/tehoservis.ru/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[23-Feb-2019 18:52:29 Europe/Moscow] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php:59
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Statement.php(59): PDOStatement->execute(Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(625): Drupal\Core\Database\Statement->execute(Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#6 [internal function]: _drupal_shutdown_function()
+#7 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM {semaphore} 
+WHERE value = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 10988143875c716c1d4820c2.26300086
+)
+ in /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php:686
+Stack trace:
+#0 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Connection.php(650): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'DELETE FROM {se...', Array, Array)
+#1 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(358): Drupal\Core\Database\Connection->query('DELETE FROM {se...', Array, Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(55): Drupal\Core\Database\Driver\mysql\Connection->query('DELETE FROM {se...', Array, Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/includes/bootstrap.inc(1037): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#5 [internal function]: _drupal_shutdown_function()
+#6 {main}
+[28-Feb-2019 17:07:38 Europe/Moscow] Error: Call to undefined function shortcode_atts() in /home/u982426717/domains/tehoservis.ru/public_html/themes/gavias_castron/gva_content_builder/gva_download.php on line 94 #0 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/includes/frontend.php(109): element_gva_download::render_content(Array, '')
+#1 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/includes/frontend.php(53): gavias_content_builder_render_element('gva_download', Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/includes/frontend.php(22): gavias_content_builder_render_el(Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/src/Plugin/Field/FieldFormatter/GaviasContentBuilderFormatter.php(47): gavias_content_builder_frontend('[{"settings":{"...')
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Field/FormatterBase.php(80): Drupal\gavias_content_builder\Plugin\Field\FieldFormatter\GaviasContentBuilderFormatter->viewElements(Object(Drupal\Core\Field\FieldItemList), 'en')
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/Entity/EntityViewDisplay.php(262): Drupal\Core\Field\FormatterBase->view(Object(Drupal\Core\Field\FieldItemList), 'en')
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/EntityViewBuilder.php(321): Drupal\Core\Entity\Entity\EntityViewDisplay->buildMultiple(Array)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/node/src/NodeViewBuilder.php(22): Drupal\Core\Entity\EntityViewBuilder->buildComponents(Array, Array, Array, 'full')
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/EntityViewBuilder.php(263): Drupal\node\NodeViewBuilder->buildComponents(Array, Array, Array, 'full')
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/EntityViewBuilder.php(220): Drupal\Core\Entity\EntityViewBuilder->buildMultiple(Array)
+#10 [internal function]: Drupal\Core\Entity\EntityViewBuilder->build(Array)
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/Renderer.php(378): call_user_func(Array, Array)
+#12 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/Renderer.php(195): Drupal\Core\Render\Renderer->doRender(Array, false)
+#13 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php(226): Drupal\Core\Render\Renderer->render(Array, false)
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/Renderer.php(582): Drupal\Core\Render\MainContent\HtmlRenderer->Drupal\Core\Render\MainContent\{closure}()
+#15 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php(227): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#16 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php(117): Drupal\Core\Render\MainContent\HtmlRenderer->prepare(Array, Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\CurrentRouteMatch))
+#17 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/EventSubscriber/MainContentViewSubscriber.php(90): Drupal\Core\Render\MainContent\HtmlRenderer->renderResponse(Array, Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\CurrentRouteMatch))
+#18 [internal function]: Drupal\Core\EventSubscriber\MainContentViewSubscriber->onViewRenderArray(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#19 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#20 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(156): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#21 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(68): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#22 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/Session.php(57): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#23 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(47): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#24 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(99): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#25 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(78): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#26 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(47): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#27 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(52): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#28 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#29 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(665): Stack\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#30 /home/u982426717/domains/tehoservis.ru/public_html/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#31 {main}
+[28-Feb-2019 17:07:43 Europe/Moscow] Error: Call to undefined function shortcode_atts() in /home/u982426717/domains/tehoservis.ru/public_html/themes/gavias_castron/gva_content_builder/gva_download.php on line 94 #0 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/includes/frontend.php(109): element_gva_download::render_content(Array, '')
+#1 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/includes/frontend.php(53): gavias_content_builder_render_element('gva_download', Array)
+#2 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/includes/frontend.php(22): gavias_content_builder_render_el(Array)
+#3 /home/u982426717/domains/tehoservis.ru/public_html/modules/gavias_content_builder/src/Plugin/Field/FieldFormatter/GaviasContentBuilderFormatter.php(47): gavias_content_builder_frontend('[{"settings":{"...')
+#4 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Field/FormatterBase.php(80): Drupal\gavias_content_builder\Plugin\Field\FieldFormatter\GaviasContentBuilderFormatter->viewElements(Object(Drupal\Core\Field\FieldItemList), 'en')
+#5 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/Entity/EntityViewDisplay.php(262): Drupal\Core\Field\FormatterBase->view(Object(Drupal\Core\Field\FieldItemList), 'en')
+#6 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/EntityViewBuilder.php(321): Drupal\Core\Entity\Entity\EntityViewDisplay->buildMultiple(Array)
+#7 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/node/src/NodeViewBuilder.php(22): Drupal\Core\Entity\EntityViewBuilder->buildComponents(Array, Array, Array, 'full')
+#8 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/EntityViewBuilder.php(263): Drupal\node\NodeViewBuilder->buildComponents(Array, Array, Array, 'full')
+#9 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Entity/EntityViewBuilder.php(220): Drupal\Core\Entity\EntityViewBuilder->buildMultiple(Array)
+#10 [internal function]: Drupal\Core\Entity\EntityViewBuilder->build(Array)
+#11 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/Renderer.php(378): call_user_func(Array, Array)
+#12 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/Renderer.php(195): Drupal\Core\Render\Renderer->doRender(Array, false)
+#13 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php(226): Drupal\Core\Render\Renderer->render(Array, false)
+#14 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/Renderer.php(582): Drupal\Core\Render\MainContent\HtmlRenderer->Drupal\Core\Render\MainContent\{closure}()
+#15 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php(227): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#16 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/Render/MainContent/HtmlRenderer.php(117): Drupal\Core\Render\MainContent\HtmlRenderer->prepare(Array, Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\CurrentRouteMatch))
+#17 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/EventSubscriber/MainContentViewSubscriber.php(90): Drupal\Core\Render\MainContent\HtmlRenderer->renderResponse(Array, Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\CurrentRouteMatch))
+#18 [internal function]: Drupal\Core\EventSubscriber\MainContentViewSubscriber->onViewRenderArray(Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#19 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(111): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent), 'kernel.view', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#20 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(156): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch('kernel.view', Object(Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent))
+#21 /home/u982426717/domains/tehoservis.ru/public_html/vendor/symfony/http-kernel/HttpKernel.php(68): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#22 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/Session.php(57): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#23 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(47): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#24 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(99): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#25 /home/u982426717/domains/tehoservis.ru/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(78): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#26 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(47): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#27 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(52): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#28 /home/u982426717/domains/tehoservis.ru/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#29 /home/u982426717/domains/tehoservis.ru/public_html/core/lib/Drupal/Core/DrupalKernel.php(665): Stack\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#30 /home/u982426717/domains/tehoservis.ru/public_html/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#31 {main}

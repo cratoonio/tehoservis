@@ -1,0 +1,6 @@
+type: module
+name : Gavias Castron Themer
+description : Gavias Castron Themer
+package: gavias
+core: '8.x'
+project: 'gavias_hook_themer'
